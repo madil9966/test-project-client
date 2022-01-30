@@ -84,7 +84,7 @@ export default function ViewUsers() {
         style={{
           display: "flex",
           flexDirection: "row",
-          alignItems: "center",
+          alignItems: "flex-end",
           justifyContent: "center",
         }}
       >
@@ -111,7 +111,7 @@ export default function ViewUsers() {
             onClick={onSearchButtonClick}
             variant="contained"
             color="primary"
-            size="large"
+            size="medium"
           >
             Search
           </Button>

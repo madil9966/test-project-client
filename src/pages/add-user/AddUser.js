@@ -46,8 +46,9 @@ export default function AddUser() {
     let { email, age } = data;
     const errors = {};
 
-    if (!email.includes("@") || email.length === 0)
-      errors.email = "Enter Valid Email!";
+    if (email.length === 0) errors.email = "Email Cannot be Empty";
+
+    if (!email.includes("@")) errors.email = "Enter Valid Email!";
 
     if (age < 18 || age > 60) errors.age = "Age must be between 18-60 years";
 
@@ -61,14 +62,19 @@ export default function AddUser() {
       {!isSubmit && <h3 style={{ color: "red" }}>{serverResponse}</h3>}
 
       <form onSubmit={formSubmitHandler}>
-        <div style={{ width: "50%", margin: "auto" }}>
+        <div
+          style={{
+            width: window.innerWidth < 640 ? "70%" : "50%",
+            margin: "auto",
+          }}
+        >
           <div style={{ marginBottom: "3%" }}>
             <FormControl fullWidth>
               <InputLabel htmlFor="name">Name</InputLabel>
               <Input
                 id="name"
                 type="text"
-                placeholder="john smith"
+                placeholder="Muhammad Ahmed"
                 value={formData.name}
                 onChange={(event) =>
                   setFormData({ ...formData, name: event.target.value })
@@ -82,7 +88,7 @@ export default function AddUser() {
               <InputLabel htmlFor="Email">Email</InputLabel>
               <Input
                 id="email"
-                type="text"
+                type="text" //change it to email to apply built-in validation
                 placeholder="abc123@gmail.com"
                 value={formData.email}
                 onChange={(event) =>
@@ -103,7 +109,7 @@ export default function AddUser() {
               <Input
                 id="cell"
                 type="text"
-                placeholder="	+92-335-5615648"
+                placeholder="+92-335-5615648"
                 value={formData.cell}
                 onChange={(event) =>
                   setFormData({ ...formData, cell: event.target.value })
