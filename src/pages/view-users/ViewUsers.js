@@ -90,12 +90,12 @@ export default function ViewUsers() {
       >
         <div style={{ width: "25%", marginRight: "5%" }}>
           <FormControl fullWidth>
-            <InputLabel id="select-label">Option</InputLabel>
+            <InputLabel id="select-label">Search User</InputLabel>
             <Select
               defaultValue={"ALL"}
               labelId="select-label"
               id="demo-simple-select"
-              label="Option"
+              label="Search User"
               onChange={handleSelectChange}
             >
               {searchList.map((item) => (
