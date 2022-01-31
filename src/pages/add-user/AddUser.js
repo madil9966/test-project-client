@@ -37,7 +37,7 @@ export default function AddUser() {
         setFormData(initialValues);
         setTimeout(() => {
           history.push("/app/view-users");
-        }, 5000);
+        }, 3000);
       }
     }
   };
@@ -45,8 +45,6 @@ export default function AddUser() {
   const validateFormData = (data) => {
     let { email, age } = data;
     const errors = {};
-
-    if (email.length === 0) errors.email = "Email Cannot be Empty";
 
     if (!email.includes("@")) errors.email = "Enter Valid Email!";
 
